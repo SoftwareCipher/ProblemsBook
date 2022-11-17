@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title th:text="${title}"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container my-5">
+  <h1>Приложение «Список дел»</h1>
+  <div  class="alert alert-danger w-25">
+    <p />
+  </div>
+  <form method="post" class="w-25">
+    <input type="text" name="task" placeholder="Впишите задание" class="form-control"><br>
+    <button class="btn btn-success" type="submit">Добавить</button>
+  </form>
+  <hr class="mt-5">
+  <h3>Все задания</h3>
+  <div  class="alert alert-warning w-25">
+    <p />
+  </div>
+</div>
+
+</body>
+</html>
