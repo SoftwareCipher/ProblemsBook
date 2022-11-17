@@ -9,8 +9,8 @@
 
 <div class="container my-5">
   <h1>Приложение «Список дел»</h1>
-  <div  class="alert alert-danger w-25">
-    <p />
+  <div th:if="${error}" class="alert alert-danger w-25">
+    <p th:text="${error}"/>
   </div>
   <form method="post" class="w-25">
     <input type="text" name="task" placeholder="Впишите задание" class="form-control"><br>
@@ -18,8 +18,8 @@
   </form>
   <hr class="mt-5">
   <h3>Все задания</h3>
-  <div  class="alert alert-warning w-25">
-    <p />
+  <div th:each="el : ${tasks}" class="alert alert-warning w-25">
+    <p th:text="${el.task}"/>
   </div>
 </div>
 
