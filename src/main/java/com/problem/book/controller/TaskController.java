@@ -35,4 +35,8 @@ public class TaskController {
         taskRepository.save(taskObj);
         return "redirect:/";
     }
+
+    public String deleteTask(){
+        return "redirect:/";
+    }
 }
