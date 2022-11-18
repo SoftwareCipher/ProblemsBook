@@ -38,7 +38,7 @@ public class TaskController {
     }
 
     @PostMapping("/{id}/remove")
-    public String deleteTask(@PathVariable(value = "id") long id, Model model){
+    public String deleteTask(@PathVariable(value = "id") long id, Model model) {
         Tasks tasks = taskRepository.findById(id).orElseThrow();
         taskRepository.delete(tasks);
         return "redirect:/";
