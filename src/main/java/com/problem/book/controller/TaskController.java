@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -36,7 +37,10 @@ public class TaskController {
         return "redirect:/";
     }
 
-    public String deleteTask(){
+    @PostMapping("/{id}/remove")
+    public String deleteTask(@PathVariable(value = "id") long id, Model model){
+        Tasks tasks = taskRepository.findById(id).orElseThrow();
+        taskRepository.delete(tasks);
         return "redirect:/";
     }
 }

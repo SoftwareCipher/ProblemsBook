@@ -20,6 +20,9 @@
   <h3>Все задания</h3>
   <div th:each="el : ${tasks}" class="alert alert-warning w-25">
     <p th:text="${el.task}"/>
+    <form th:action="'/' + ${el.id} + '/remove'" method="post">
+      <button class="bth bth-warning" type="submit">Удалить</button>
+    </form>
   </div>
 </div>
 
